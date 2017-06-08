@@ -6,7 +6,7 @@ class AuthenticationTest < ApplicationSystemTestCase
     assert_selector 'h1', text: 'Welcome to Weblog'
     
     click_on('Sign Up')
-    assert_selector 'h1', text: 'Sign Up'
+    assert_selector 'a', 'Sign Up'
 
     fill_in('Name', with: 'John')
     fill_in('Email', with: 'yolo@ftw.ch')
