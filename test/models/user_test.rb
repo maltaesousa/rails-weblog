@@ -9,4 +9,9 @@ class UserTest < ActiveSupport::TestCase
     jane = users(:jane)
     assert_equal 'Jane', jane.display_name
   end
+  test '#minimum_lenght on user password' do
+    user = User.new(password: 'yolo')
+    assert_not user.valid?
+    assert_equal [:password], user.errors.keys
+  end
 end
